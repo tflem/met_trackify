@@ -35,6 +35,7 @@ before_script:
 
 script:
   - bin/rake db:migrate RAILS_ENV=test
+  - bundle exec rspec spec
   - bin/rake
 
 after_script:
