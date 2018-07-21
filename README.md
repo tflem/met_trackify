@@ -1,24 +1,45 @@
-# README
+[![Build Status](https://travis-ci.org/tflem/met_trackify.svg?branch=master)](https://travis-ci.org/tflem/met_trackify)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/maintainability)](https://codeclimate.com/github/tflem/met_trackify/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/test_coverage)](https://codeclimate.com/github/tflem/met_trackify/test_coverage)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Met Trackify
 
-Things you may want to cover:
+> A product tracking application, which features the following tools:
 
-* Ruby version
+* Ruby 2.5.1
+* Continuous Integration: Travis
+* Ruby on Rails 5.2.0
+* HTML and Sass
+* PostgreSQL 10
+* Testing Framework: RSpec 3.7.1
+* Bulma: CSS Framework Based on Flexbox 0.7.1
 
-* System dependencies
+## Setup
 
-* Configuration
+How to run tests:
 
-* Database creation
+```
+% rails test
+```
 
-* Database initialization
+How to run the development console:
 
-* How to run the test suite
+```
+% rails console
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+How to run the development server:
 
-* Deployment instructions
+```
+% rails server
+```
 
-* ...
+How to prepare (create and migrate) DB for `development` and `test` environments:
+
+```
+% rails db:create
+
+% rails db:migrate
+```
+
+You can view my progress at http://mettrackify.herokuapp.com.
