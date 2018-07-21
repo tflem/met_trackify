@@ -4,7 +4,7 @@
 
 # Met Trackify
 
-> A product tracking application, which features the following tools:
+> This a product tracking application, which features the following tools:
 
 * Ruby 2.5.1
 * Continuous Integration: Travis
@@ -19,7 +19,7 @@
 How to run tests:
 
 ```
-% rails test
+% rspec spec
 ```
 
 How to run the development console:
