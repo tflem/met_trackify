@@ -1,0 +1,27 @@
+<%= simple_form_for(@product) do |f| %>  
+  <div class="field">
+    <div class="control">
+      <%= f.input :article_number, label: "Article Number", placeholder: "Article Number" %>      
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :article_name, label: "Article Name", placeholder: "Article Name" %>
+    </div>
+  </div>
+
+  <div class="select">
+    <div class="control">
+      <%= f.input :date_received, as: :date, label: "Date Received" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :article_location, label: "Article Location", placeholder: "Article Location" %>
+    </div>
+  </div>
+  
+  <%= f.button :submit, "Add New Product", class: "button is-primary is-rounded" %>
+<% end %>
