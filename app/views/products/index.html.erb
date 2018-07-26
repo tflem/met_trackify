@@ -1,1 +1,25 @@
+<h1>Products</h1>
+
 <%= link_to "New Product", new_product_path %>
+
+<table class="ui selectable inverted table">
+  <thead>
+    <tr>
+      <th>Article Number</th>
+      <th>Article Name</th>
+      <th>Date Received</th>
+      <th>Article Location</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.article_name, product %></td>
+        <td><%= product.article_number %></td>
+        <td><%= product.date_received %></td>
+        <td><%= product.article_location %></td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
