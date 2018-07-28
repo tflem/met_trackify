@@ -9,10 +9,10 @@
 * Ruby 2.5.1
 * Continuous Integration: Travis
 * Ruby on Rails 5.2.0
-* HTML and Sass
+* HTML5 and Sass
 * PostgreSQL 10
 * Testing Framework: RSpec 3.7.1
-* Bulma: CSS Framework Based on Flexbox 0.7.1
+* CSS Framework: Semantic UI
 
 ## Setup
 
