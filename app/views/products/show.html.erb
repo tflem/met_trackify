@@ -1,5 +1,21 @@
-<% title(@product.article_name, "Products") %>
+<% title(@product.article_name, "Product Summary") %>
 
-<h1><%= @product.article_number %>></h1>
-<p><%= @product.date_received %></p>
-<p><%= @product.article_location %></p>
+<h2 class="ui center aligned header">Product Summary</h2>
+
+<table class="ui five column inverted table">
+  <thead>
+    <tr>
+      <th>Article Name</th>
+      <th>Article Number</th>      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>    
+      <tr>
+        <td><%= @product.article_name %></td>
+        <td><%= @product.article_number %></td>        
+        <td><%= link_to semantic_icon("plus") + "Add More", new_product_path, 
+                class: "mini ui button" %></td>        
+      </tr>
+  </tbody> 
+</table>
