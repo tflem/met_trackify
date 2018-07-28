@@ -21,7 +21,7 @@ RSpec.feature "Users can create new products" do
     product = Product.find_by(article_name: "Christmas Tree")
     expect(page.current_url).to eq product_url(product)
 
-    title = "Christmas Tree - Products - Met Trackify"
+    title = "Christmas Tree - Product Summary - Met Trackify"
     expect(page).to have_title title
   end
   
