@@ -1,12 +1,12 @@
-<h1>Products</h1>
+<h2 class="ui center aligned header">List of Products</h2>
 
-<%= link_to "New Product", new_product_path %>
+<%= link_to semantic_icon("plus") + "New Product", new_product_path, class: "ui secondary button" %>
 
-<table class="ui selectable inverted table">
+<table class="ui five column selectable inverted table">
   <thead>
     <tr>
-      <th>Article Number</th>
       <th>Article Name</th>
+      <th>Article Number</th>
       <th>Date Received</th>
       <th>Article Location</th>
       <th>Actions</th>
@@ -19,6 +19,10 @@
         <td><%= product.article_number %></td>
         <td><%= product.date_received %></td>
         <td><%= product.article_location %></td>
+        <td>
+          <%= link_to semantic_icon("edit") + "Edit", class: "mini ui button" %>
+          <%= link_to semantic_icon("delete") + "Delete", class: "mini ui button" %>
+        </td>
       </tr>
     <% end %>
   </tbody> 
