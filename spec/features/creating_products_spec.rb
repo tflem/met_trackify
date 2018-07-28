@@ -14,7 +14,7 @@ RSpec.feature "Users can create new products" do
     select DateTime.current.strftime("%B"), from: "product[date_received(2i)]"
     select DateTime.current.strftime("%d"), from: "product[date_received(3i)]"
     fill_in "Article Location",	with: "15-003"
-    click_button "Add New Product"     
+    click_button "Create Product"     
     
     expect(page).to have_content "Product Information Created."
     
@@ -26,7 +26,7 @@ RSpec.feature "Users can create new products" do
   end
   
   scenario "when providing invalid attributes" do
-    click_button "Add New Product"
+    click_button "Create Product"
 
     expect(page).to have_content "Product Information Has Not Been Created."
     expect(page).to have_content "Article number can't be blank"

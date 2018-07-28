@@ -13,9 +13,13 @@
   <tbody>    
       <tr>
         <td><%= @product.article_name %></td>
-        <td><%= @product.article_number %></td>        
-        <td><%= link_to semantic_icon("plus") + "Add More", new_product_path, 
-                class: "mini ui button" %></td>        
+        <td><%= @product.article_number %></td>  
+        <td>
+            <%= link_to semantic_icon("edit") + "Edit Product", edit_product_path(@product), 
+                class: "mini ui button" %>
+            <%= link_to semantic_icon("plus") + "Add More", new_product_path, 
+                class: "mini ui button" %>
+        </td>       
       </tr>
   </tbody> 
 </table>
