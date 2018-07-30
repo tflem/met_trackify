@@ -29,10 +29,14 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update(product_params)
 
-    flash[:notice] = "Product Has Been Updated."
-    redirect_to @product 
+    if @product.update(product_params)
+      flash[:notice] = "Product Has Been Updated."
+      redirect_to @product 
+    else
+      flash[:alert] = "Product Has Not Been Updated."
+      render "edit"
+    end
   end    
 
   private
