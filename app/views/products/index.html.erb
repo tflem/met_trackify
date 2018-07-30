@@ -20,8 +20,10 @@
         <td><%= product.date_received %></td>
         <td><%= product.article_location %></td>
         <td>
-          <%= link_to semantic_icon("edit") + "Edit", class: "mini ui button" %>
-          <%= link_to semantic_icon("delete") + "Delete", class: "mini ui button" %>
+          <%= link_to semantic_icon("edit") + "Edit",
+              edit_product_path(product), class: "small ui orange button" %>
+          <%= link_to semantic_icon("delete") + "Delete",
+               product_path(product), method: :delete, class: "small ui orange button" %>
         </td>
       </tr>
     <% end %>

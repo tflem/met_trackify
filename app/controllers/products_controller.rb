@@ -37,7 +37,19 @@ class ProductsController < ApplicationController
       flash[:alert] = "Product Has Not Been Updated."
       render "edit"
     end
-  end    
+  end   
+  
+  def destroy
+    # find the product
+    @product = Product.find(params[:id])
+    # delete the product
+    @product.destroy
+
+    # render flash message
+    flash[:notice] = "The Product Has Been Deleted."
+    # redirect to index page
+    redirect_to @product
+  end
 
   private
     
