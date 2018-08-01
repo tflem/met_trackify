@@ -9,10 +9,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      flash[:notice] = "Product Information Created."
+      flash[:success] = "Product Information Created."
       redirect_to @product
     else
-      flash.now[:alert] = "Product Information Has Not Been Created."
+      flash.now[:error] = "Product Information Has Not Been Created."
       render "new"
     end
   end
