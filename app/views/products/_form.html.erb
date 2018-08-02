@@ -1,40 +1,31 @@
-<%= simple_form_for(product) do |f| %>  
+<%= simple_form_for(product) do |f| %> 
 
-  <% if product.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= pluralize(product.errors.count, "error") %>
-     prohibited this product from being saved:</h2>
-
-     <ul>
-       <% product.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-       <% end %>
-     </ul>
-   </div>
-  <% end %>
-
-  <div class="ui equal width form">
-    <div class="fields">
-
+ <div class="ui equal width form">    
+  <div class="ui inverted segment">     
+    
       <div class="field">
         <%= f.input :article_number, label: "Article Number", placeholder: "Article Number" %>      
       </div>
   
       <div class="field">
         <%= f.input :article_name, label: "Article Name", placeholder: "Article Name" %>
-      </div>
-    </div>
+      </div>    
 
-    <div class="field">  
-      <div class="ui selection">
-          <%= f.input :date_received, as: :date, label: "Date Received" %>
+      <div class="field">
+        <div class="ui calendar" id="date-received">    
+          <label>Date Received</label>       
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>            
+            <%= f.text_field :date_received, placeholder: "Date Received" %>
+          </div>
+        </div>      
       </div>
-    </div>
-    
-    <div class="field">
-      <%= f.input :article_location, label: "Article Location", placeholder: "Article Location" %>
-    </div>
 
-    <%= f.submit class: "ui button" %>
-  </div>  
+      <div class="field">
+        <%= f.input :article_location, label: "Article Location", placeholder: "Article Location" %>
+      </div>
+
+      <%= f.submit class: "ui button orange" %>
+    </div>  
+  </div>
 <% end %>

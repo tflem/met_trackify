@@ -10,9 +10,7 @@ RSpec.feature "Users can create new products" do
   scenario "with valid attributes" do
     fill_in "Article Number",	with: 1001009741
     fill_in "Article Name",	with: "Christmas Tree"
-    select DateTime.current.strftime("%Y"), from: "product[date_received(1i)]"
-    select DateTime.current.strftime("%B"), from: "product[date_received(2i)]"
-    select DateTime.current.strftime("%d"), from: "product[date_received(3i)]"
+    fill_in "Date Received", with: DateTime.current.strftime("%B%d%Y")
     fill_in "Article Location",	with: "15-003"
     click_button "Create Product"     
     

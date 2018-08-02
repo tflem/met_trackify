@@ -4,8 +4,12 @@
 
 ready = ->
   $('.message .close').on('click', 
-    -> $(this).closest('.message').transition('fade')
+    -> $(this).closest('.message').transition('fade')  
   )
+  
+  $('#date-received').calendar({
+    type: 'date'
+  });
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

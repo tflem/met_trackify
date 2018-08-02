@@ -11,13 +11,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css',
+        'https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css',
+         media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',
+        'https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js',
+        'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="ui container">      
+    <div class='ui container'>      
       <%= semantic_flash %>
-    <%= yield %>
+    <%= yield %>    
   </body>
 </html>
