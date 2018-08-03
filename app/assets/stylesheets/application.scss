@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
- @import 'semantic-ui';
+ @import 'semantic-ui'; 
 
- .container {
-   padding-top: 1.5em;
+ @mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+ .main {
+   padding-top: 70px;
  }
