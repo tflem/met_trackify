@@ -15,11 +15,11 @@
  */
  @import 'semantic-ui'; 
 
- @mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
  .main {
-   padding-top: 70px;
+   padding-top: 80px;
+   padding-bottom: 15px;
+ }
+
+ .heart {
+   color: red;
  }
