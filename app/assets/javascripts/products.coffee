@@ -5,11 +5,15 @@
 ready = ->
   $('.message .close').on('click', 
     -> $(this).closest('.message').transition('fade')  
-  )
-  
-  $('#date-received').calendar({
-    type: 'date'
-  });
+  )   
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
+
+ready = ->
+  $('#date-received').calendar({
+    type: 'date'
+  }); 
+
+$(document).on('turbolinks:load', ready)
+
