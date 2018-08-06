@@ -20,27 +20,41 @@
         'data-turbolinks-track': 'reload' %>
   </head> 
 
-  <body>
-  <div class="ui fixed inverted menu">
-    <div class="ui container">
+  <body>  
+  
+    <div class="ui sidebar inverted vertical menu">
+      <a class="item">Home</a>
+      <a class="item">Login</a>
+      <a class="item">Sign Up</a>
+    </div>    
+    
+    <div class="ui fixed inverted menu">      
+      <a class="item sidebar">              
+        <i class="icon sidebar"></i>
+      </a>    
       <a href="#" class="header item">
         <h1>Met Trackify</h1>
       </a>
-      <a href="#" class="item">Home</a>
-      <div class="ui simple dropdown item">
+      <a class="item">Home</a>
+      <div class="right menu">
+        <a class="item">Login</a>
+        <a class="item">Sign Up</a>    
+      </div>  
+    </div>              
+      
+      <!--<div class="ui simple dropdown item">
         Dropdown <i class="dropdown icon"></i>
         <div class="menu">
           <a class="item" href="#">Link Item</a>
           <a class="item" href="#">Link Item</a>          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  <div class="ui container main">    
-    <%= semantic_flash %>           
-    <%= yield %>      
-  </div>  
+        </div>-->
+      </div>   
+  
+  <div class="pusher">   
+    <div class="ui container main"> 
+      <%= semantic_flash %>         
+      <%= yield %>      
+    </div>  
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">          
       <div class="ui horizontal inverted small divided link list">
@@ -50,6 +64,7 @@
         <p class="item">Met Trackify &copy; 2018</p>        
       </div>
     </div>
-  </div>
-  </body>
+  </div>  
+</div>
+</body>
 </html>
