@@ -11,6 +11,12 @@ RSpec.feature "Users can create new projects" do
     fill_in "Project Time",	with: "4 Hours" 
     click_button "Create Project"  
 
-    expect(page).to have_content "Project Information Created."  
+    expect(page).to have_content "Project Information Created." 
+    
+    project = Project.find_by(project_name: "Cleaning Update")
+    expect(page.current_url).to eq project_url(project)
+
+    title = "Cleaning Update - Project Summary - Met Trackify"
+    expect(page).to have_title title
   end
 end
