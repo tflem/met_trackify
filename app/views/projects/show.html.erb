@@ -1,0 +1,25 @@
+<h2 class="ui center aligned header">Project Summary</h2>
+
+<table class="ui five column inverted table">
+  <thead>
+    <tr>
+      <th>Project Number</th>
+      <th>Project Name</th>   
+      <th>Project Time</th>   
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>    
+      <tr>
+        <td><%= @project.project_number %></td>
+        <td><%= @project.project_name %></td>  
+        <td><%= @project.project_time %></td> 
+        <td>
+            <%= link_to semantic_icon("edit") + "Edit Project", edit_project_path(@project), 
+                class: "small ui orange button" %>
+            <%= link_to semantic_icon("plus") + "Add Project", new_project_path, 
+                class: "small ui orange button" %>
+        </td>       
+      </tr>
+  </tbody> 
+</table>

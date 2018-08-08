@@ -1,0 +1,27 @@
+<%= link_to semantic_icon("plus") + "Project Time", new_project_path, class: "ui orange button" %>
+
+<table class="ui five column selectable inverted table index">
+  <thead>
+    <tr>
+      <th>Project Number</th>
+      <th>Project Name</th>
+      <th>Project Time</th>      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.project_number, project %></td>
+        <td><%= project.project_name %></td>
+        <td><%= project.project_time %></td>
+        <td>
+          <%= link_to semantic_icon("edit") + "Edit",
+              edit_project_path(project), class: "small ui orange button" %>
+          <%= link_to semantic_icon("delete") + "Delete",
+               project_path(project), method: :delete, class: "small ui orange button" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
