@@ -57,7 +57,9 @@ class ProductsController < ApplicationController
     end
     
     def product_params
-      params.require(:product).permit(:article_number, :article_name,
-                                      :date_received, :article_location)
+      params.require(:product).permit(:article_number,
+                                      :article_name,
+                                      :date_received,
+                                      :article_location)
     end
 end
