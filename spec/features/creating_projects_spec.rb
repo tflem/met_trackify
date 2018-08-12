@@ -5,7 +5,7 @@ RSpec.feature "Users can create new projects" do
   before do
     visit "/projects"
 
-    click_link "Project Time"
+    click_link "Add New Project"
   end
 
   scenario "with valid attributes" do

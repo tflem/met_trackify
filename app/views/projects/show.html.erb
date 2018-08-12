@@ -2,6 +2,11 @@
 
 <h2 class="ui center aligned header">Project Summary</h2>
 
+<%= link_to semantic_icon("plus") + "Add New Project", new_project_path, 
+                class: "ui orange button" %>
+<%= link_to semantic_icon("list") + "Show All Projects", projects_path, 
+                class: "ui orange button" %>
+
 <table class="ui five column inverted table">
   <thead>
     <tr>
@@ -17,10 +22,10 @@
         <td><%= @project.project_name %></td>  
         <td><%= @project.project_time %></td> 
         <td>
-            <%= link_to semantic_icon("edit") + "Edit Project", edit_project_path(@project), 
+            <%= link_to semantic_icon("edit") + "Edit", edit_project_path(@project), 
                 class: "small ui orange button" %>
-            <%= link_to semantic_icon("plus") + "Add Project", new_project_path, 
-                class: "small ui orange button" %>
+            <%= link_to semantic_icon("delete") + "Delete",
+               project_path(@project), method: :delete, class: "small ui orange button" %>            
         </td>       
       </tr>
   </tbody> 

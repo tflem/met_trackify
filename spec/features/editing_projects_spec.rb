@@ -6,7 +6,7 @@ RSpec.feature "Users can edit existing projects" do
 
     visit "/projects"
     click_link 17701
-    click_link "Edit Project"
+    click_link "Edit"
   end
 
   scenario "with valid attributes" do

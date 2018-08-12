@@ -2,7 +2,10 @@
 
 <h2 class="ui center aligned header">Product Summary</h2>
 
-<%= link_to semantic_icon("cart down arrow") + "View All Products", products_path, class: "ui orange button" %>
+<%= link_to semantic_icon("plus") + "Add New Product", new_product_path, 
+    class: "small ui orange button" %>
+<%= link_to semantic_icon("cart down arrow") + "Show All Products",
+    products_path, class: "ui orange button" %>
 
 <table class="ui five column inverted table">
   <thead>
@@ -17,10 +20,10 @@
         <td><%= @product.article_name %></td>
         <td><%= @product.article_number %></td>  
         <td>
-            <%= link_to semantic_icon("edit") + "Edit Product", edit_product_path(@product), 
+            <%= link_to semantic_icon("edit") + "Edit", edit_product_path(@product), 
                 class: "small ui orange button" %>
-            <%= link_to semantic_icon("plus") + "Add More", new_product_path, 
-                class: "small ui orange button" %>
+            <%= link_to semantic_icon("delete") + "Delete",
+                product_path(@product), method: :delete, class: "small ui orange button" %>            
         </td>       
       </tr>
   </tbody> 

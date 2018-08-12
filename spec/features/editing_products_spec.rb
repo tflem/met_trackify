@@ -6,7 +6,7 @@ RSpec.feature "Users can edit existing products" do
 
     visit "/"
     click_link "Christmas Tree"
-    click_link "Edit Product"
+    click_link "Edit"
   end
 
   scenario "with valid attributes" do

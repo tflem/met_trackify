@@ -4,7 +4,7 @@ RSpec.feature "Users can create new products" do
   before do
     visit "/"
 
-    click_link "New Product"
+    click_link "Add New Product"
   end
 
   scenario "with valid attributes" do
