@@ -1,0 +1,23 @@
+<div class="ui container forms">
+  <%= simple_form_for(@project) do |f| %> 
+
+    <div class="ui form">    
+      <div class="ui segment orange">  
+    
+        <div class="field">
+          <%= f.input :project_number, label: "Project Number", placeholder: "Project Number" %>      
+        </div>
+  
+        <div class="field">
+          <%= f.input :project_name, label: "Project Name", placeholder: "Project Name" %>
+        </div>          
+
+        <div class="field">
+          <%= f.input :project_time, label: "Project Time", placeholder: "Project Time" %>
+        </div>
+
+        <%= f.submit class: "ui button orange" %>
+      </div>  
+    </div>
+  <% end %>
+</div>
