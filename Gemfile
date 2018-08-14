@@ -16,17 +16,18 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.1.1'
 gem 'font-awesome-sass', '~> 5.0.13'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
+gem 'devise', '~> 4.4.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 
-group :development, :test do  
+group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "rspec-rails", '~> 3.7.0'  
+  gem "rspec-rails", '~> 3.7.0'
 end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'  
+  gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
