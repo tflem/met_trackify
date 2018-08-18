@@ -20,15 +20,15 @@
     <%= javascript_include_tag 'application',
         'https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js',
         'data-turbolinks-track': 'reload' %>
-  </head> 
+  </head>
 
-  <body>  
-    <%= render "layouts/header" %>     
-    <div class="pusher">   
-       <div class="ui container main"> 
-         <%= semantic_flash %>         
-         <%= yield %>      
-       </div>         
+  <body>
+    <%= render "layouts/header" %>
+    <div class="pusher">
+       <div class="ui container main">
+         <%= semantic_flash %>
+         <%= yield %>
+       </div>
      <%= render "layouts/footer" %>
     </div>
   </body>

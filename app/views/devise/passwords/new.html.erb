@@ -1,0 +1,21 @@
+<h2 class="ui center aligned header">Forgot Your Password?</h2>
+
+<div class="ui container forms">
+  <div class="ui form">    
+    <div class="ui segment orange">  
+
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="field">
+      <%= f.input :email, required: true, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.button :submit, "Send Password Reset Instructions", class: "ui button orange" %>
+    </div>
+  <% end %>
+
+  </div>
+ </div>
+</div>
