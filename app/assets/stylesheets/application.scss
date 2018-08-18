@@ -20,6 +20,20 @@
    padding-bottom: 120px;
  } 
 
+@media only screen and (max-width: 648px) {  
+  div.ui.fixed.inverted.menu {
+    div.header.item.right,
+    a.item.logout.action { display: none; }
+  }      
+}
+
+@media only screen and (max-width: 522px) {  
+  div.ui.fixed.inverted.menu {    
+    a.item.right,
+    a.item.login.action { display: none; }
+  }      
+}
+
  h2.ui.header {
    padding-bottom: 25px;
  }
@@ -27,3 +41,5 @@
  .heart {
    color: red;
  }
+
+ 
