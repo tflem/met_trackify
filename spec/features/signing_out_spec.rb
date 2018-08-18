@@ -14,6 +14,6 @@ RSpec.feature "Signed-in users can sign out" do
       click_link "Logout"
     end
 
-    expect(page).to have_content "Signed out successfully."
+    expect(page).to have_content "Logged Out Successfully."
   end
 end
