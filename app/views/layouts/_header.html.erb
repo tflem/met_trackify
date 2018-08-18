@@ -1,17 +1,37 @@
-<div class="ui sidebar inverted vertical menu">
-    <%= link_to "Home", root_path, class: "item" %>
-    <%= link_to "Login", new_user_session_path, class: "item" %>
-</div>
+<% if user_signed_in? %>
+  <div class="ui sidebar inverted vertical menu">Signed in as <%= current_user.email %>  
+    <%= link_to semantic_icon("sign-out") + "Logout", destroy_user_session_path,
+        method: :delete, class: "item" %>  
+  </div>  
 
-<div class="ui fixed inverted menu">
-  <a class="item sidebar">
-   <i class="icon sidebar"></i>
-    <h6>Menu</h6>
-  </a>
-  <h1 class="header item">
-    <%= link_to "Met Trackify", root_path %>
-  </h1>
-  <%= link_to "Create Account", new_user_registration_path, class: "item" %>
+  <div class="ui fixed inverted menu">
+    Signed in as <%= current_user.email %>
+    <%= link_to semantic_icon("sign-out") + "Logout", destroy_user_session_path,
+        method: :delete, class: "item" %>
+  </div> 
+
+<% else %>      
+  <div class="ui sidebar inverted vertical menu">    
+    <%= link_to semantic_icon("home") + "Home", root_path,
+        class: "item" %>
+    <%= link_to semantic_icon("user") + "Login", new_user_session_path,
+        class: "item" %>    
+  </div>
+
+  <div class="ui fixed inverted menu">
+    <a class="item sidebar">
+      <i class="icon sidebar"></i>
+      <h6>Menu</h6>
+    </a>
+    <h1 class="header item">
+      <%= link_to "Met Trackify", root_path %>
+    </h1>
+    <%= link_to semantic_icon("user plus") + "Create Account",
+        new_user_registration_path, class: "item" %>
+    <%= link_to semantic_icon("user") + "Login",
+        new_user_session_path, class: "item" %>
+  </div>
+  <% end %>          
 </div>
 
 <!--<div class="ui simple dropdown item">
