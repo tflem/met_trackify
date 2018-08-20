@@ -2,7 +2,7 @@
 
 <h2 class="ui center aligned header">Product Summary</h2>
 
-<%= link_to semantic_icon("plus") + "Add New Product", new_product_path,
+<%= link_to semantic_icon("plus") + "Add New Product", new_admin_product_path,
     class: "small ui orange button" %>
 <%= link_to semantic_icon("clipboard list") + "Show All Products",
     products_path, class: "ui orange button" %>
@@ -23,7 +23,7 @@
             <%= link_to semantic_icon("edit") + "Edit", edit_product_path(@product),
                 class: "small ui orange button" %>
             <%= link_to semantic_icon("delete") + "Delete",
-                product_path(@product), method: :delete, class: "small ui orange button" %>
+                admin_product_path(@product), method: :delete, class: "small ui orange button" %>
         </td>
       </tr>
   </tbody>

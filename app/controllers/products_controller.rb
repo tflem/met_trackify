@@ -1,24 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update]
 
   def index
     @products = Product.all
-  end
-
-  def create
-    @product = Product.new(product_params)
-
-    if @product.save
-      flash[:notice] = "Product Information Created."
-      redirect_to @product
-    else
-      flash.now[:alert] = "Product Information Has Not Been Created."
-      render "new"
-    end
-  end
-
-  def new
-    @product = Product.new
   end
 
   def show
@@ -37,15 +21,7 @@ class ProductsController < ApplicationController
       flash[:alert] = "Product Has Not Been Updated."
       render "edit"
     end
-  end   
-  
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-
-    flash[:notice] = "The Product Has Been Deleted."
-    redirect_to @product
-  end
+  end     
 
   private
 

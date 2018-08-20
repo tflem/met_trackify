@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Users can delete products" do
+  before do
+    login_as(FactoryBot.create(:user, :admin))
+  end
+  
   scenario "successfully" do
     FactoryBot.create(:product, article_name: "Christmas Tree")
 
