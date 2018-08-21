@@ -1,7 +1,9 @@
 <h2 class="ui center aligned header">List of Products</h2>
 
-<%= link_to semantic_icon("plus") + "Add New Product",
-    new_admin_product_path, class: "ui orange button" %>
+<% admins_only do %>
+  <%= link_to semantic_icon("plus") + "Add New Product",
+      new_admin_product_path, class: "ui orange button" %>
+<% end %>
 
 <table class="ui five column selectable inverted table index">
   <thead>
