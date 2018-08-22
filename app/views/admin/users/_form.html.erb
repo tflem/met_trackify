@@ -1,0 +1,19 @@
+<div class="ui container forms">
+  <%= simple_form_for [:admin, user] do |f| %> 
+
+    <div class="ui form">    
+      <div class="ui segment orange">  
+    
+        <div class="field">
+          <%= f.input :email, label: "Email", placeholder: "Email" %>      
+        </div>
+  
+        <div class="field">
+          <%= f.input :password, label: "Password", placeholder: "Password" %>
+        </div>           
+
+        <%= f.submit class: "ui button orange" %>
+      </div>  
+    </div>
+  <% end %>
+</div>

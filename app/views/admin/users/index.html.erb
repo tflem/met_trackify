@@ -1,0 +1,7 @@
+<h2 class=ui center aligned header>List of Users<h2>
+
+<%= link_to semantic_icon("add user") + "Add New User", new_admin_user_path %>
+
+<% @users.each do |user| %>
+  <%= link_to user.email, [:admin, user] %>
+<% end %>

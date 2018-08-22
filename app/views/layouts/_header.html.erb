@@ -3,6 +3,9 @@
     <div class="header item">
       <%= semantic_icon("user") %>Logged In As <%= current_user.email %>  
     </div>
+    <% admins_only do %>
+      <%= link_to semantic_icon("user secret") + "Admin", admin_root_path %>
+    <% end %>
     <%= link_to semantic_icon("sign out") + "Logout", destroy_user_session_path,
         method: :delete, class: "item" %>  
   </div>  
@@ -39,6 +42,10 @@
     <h1 class="header item">
       <%= link_to "Met Trackify", root_path %>
     </h1>
+    <% admins_only do %>
+      <%= link_to semantic_icon("user secret") +
+          "Admin", admin_root_path %>
+    <% end %>
     <%= link_to semantic_icon("user plus") + "Create Account",
         new_user_registration_path, class: "item right" %>
     <%= link_to semantic_icon("user") + "Login",
