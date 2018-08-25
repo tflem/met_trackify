@@ -2,3 +2,6 @@
 
 <%= link_to semantic_icon("edit") + "Edit User",
     [:edit, :admin, @user], class: "ui button orange" %>
+
+<%= link_to semantic_icon("archive") + "Archive User",
+    [:archive, :admin, @user], method: :patch, class: "ui button orange" %>

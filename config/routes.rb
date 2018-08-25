@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
     resources :products, only: [:new, :create, :destroy]
     resources :projects, only: [:new, :create, :destroy]
-    resources :users
+    resources :users do
+      member do
+        patch :archive
+      end
+    end
   end
 
   resources :products, only: [:index, :show, :edit, :update]
