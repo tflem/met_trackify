@@ -1,8 +1,12 @@
 require "rails_helper"
 
 RSpec.feature "Users can edit existing products" do
+  let(:user) { FactoryBot.create(:user) }
+  let(:product) { FactoryBot.create(:product, article_name: "Christmas Tree") }
+
   before do
-    FactoryBot.create(:product, article_name: "Christmas Tree")
+    login_as(user)
+    assign_product_role!(user, :viewer, product)
 
     visit "/"
     click_link "Christmas Tree"

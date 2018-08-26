@@ -1,9 +1,15 @@
 require "rails_helper"
 
 RSpec.feature "Users can view projects" do
-  scenario "with project details" do
-    project = FactoryBot.create(:project, project_number: 17701)
+  let(:user) { FactoryBot.create(:user) }
+  let(:project) { FactoryBot.create(:project, project_number: 17701) }
 
+  before do
+    login_as(user)
+    assign_project_role!(user, :viewer, project)    
+  end
+
+  scenario "with project details" do
     visit "/projects"
     click_link 17701
     expect(page.current_url).to eq project_url(project)

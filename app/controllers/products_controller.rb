@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    authorize @product, :show?
   end
 
   def edit

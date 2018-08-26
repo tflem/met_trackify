@@ -1,8 +1,12 @@
 require "rails_helper"
 
 RSpec.feature "Users can edit existing projects" do  
+  let(:user) { FactoryBot.create(:user) }
+  let(:project) { FactoryBot.create(:project, project_number: 17701) }
+
   before do
-    FactoryBot.create(:project, project_number: 17701)
+    login_as(user)
+    assign_project_role!(user, :viewer, project)
 
     visit "/projects"
     click_link 17701
