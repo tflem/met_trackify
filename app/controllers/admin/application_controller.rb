@@ -9,7 +9,8 @@ class Admin::ApplicationController < ApplicationController
     def authorize_admin!
       authenticate_user!
       unless current_user.admin?
-        redirect_to root_path, alert: "You Must Be An Admin To Do That."
+        flash[:alert] = "You Must Be An Admin To Do That."
+        redirect_to root_path
       end
     end
 end
