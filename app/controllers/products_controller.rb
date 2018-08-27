@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update]
 
   def index
-    @products = Product.all
+    @products = policy_scope(Product)
   end
 
   def show

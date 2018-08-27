@@ -6,6 +6,31 @@ RSpec.describe ProductPolicy do
 
   subject { described_class }  
 
+  context "policy_scope" do
+    subject { Pundit.policy_scope(user, Product) }
+
+    let!(:product) { FactoryBot.create :product }
+    let(:user) { FactoryBot.create :user }
+
+    it "is empty for anonymous users" do
+      expect(Pundit.policy_scope(nil, Product)).to be_empty
+    end
+
+    it "includes products a user is allowed to view" do
+      assign_product_role!(user, :viewer, product)
+      expect(subject).to include(product)
+    end
+
+    it "does not include products a user is not allowed to view" do
+      expect(subject).to be_empty
+    end
+
+    it "returns all products for admins" do
+      user.admin = true
+      expect(subject).to include(product)
+    end
+  end
+
   permissions :show? do
     let(:user) { FactoryBot.create :user }
     let(:product) { FactoryBot.create :product}

@@ -14,4 +14,10 @@ RSpec.feature "Users can view products" do
     click_link "Christmas Tree"
     expect(page.current_url).to eq product_url(product)
   end
+
+  scenario "unless they do not have permission" do
+    FactoryBot.create(:product, article_name: "Hidden Info")
+    visit "/"
+    expect(page).not_to have_content "Hidden Info"
+  end
 end
