@@ -39,17 +39,17 @@ RSpec.describe ProjectPolicy do
       expect(subject).not_to permit(nil, project)
     end  
 
-    it "allows viewers of the project" do
+    it "allows viewers of the project info" do
       assign_project_role!(user, :viewer, project)
       expect(subject).to permit(user, project)
     end
 
-    it "allows editors of the project" do
+    it "allows editors of the project info" do
       assign_project_role!(user, :editor, project)
       expect(subject).to permit(user, project)
     end
 
-    it "allows managers of the project" do
+    it "allows managers of the project info" do
       assign_project_role!(user, :manager, project)
       expect(subject).to permit(user, project)
     end
@@ -59,4 +59,33 @@ RSpec.describe ProjectPolicy do
       expect(subject).to permit(admin, project)
     end    
   end  
+
+  permissions :update? do
+    let(:user) { FactoryBot.create :user }
+    let(:project) { FactoryBot.create :project }
+
+    it "blocks anonymous users" do
+      expect(subject).not_to permit(nil, project)
+    end
+    
+    it "does not allow viewers of project info" do
+      assign_project_role!(user, :viewer, project)
+      expect(subject).not_to permit(user, project)
+    end
+    
+    it "does not allow editors of project info" do
+      assign_project_role!(user, :editor, project)
+      expect(subject).not_to permit(user, project)
+    end  
+
+    it "allows managers of the project info" do
+      assign_project_role!(user, :manager, project)
+      expect(subject).to permit(user, project)
+    end
+    
+    it "allows administrators" do
+      admin = FactoryBot.create :user, :admin
+      expect(subject).to permit(admin, project)
+    end  
+  end
 end
