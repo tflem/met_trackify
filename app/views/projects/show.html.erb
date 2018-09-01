@@ -24,8 +24,10 @@
         <td><%= @project.project_name %></td>  
         <td><%= @project.project_time %></td> 
         <td>
-            <%= link_to semantic_icon("edit") + "Edit", edit_project_path(@project), 
+          <% if policy(@project).update? %>
+            <%= link_to semantic_icon("edit") + "Edit Project", edit_project_path(@project), 
                 class: "small ui orange button" %>
+          <% end %>
         <% admins_only do %>
           <%= link_to semantic_icon("delete") + "Delete", admin_project_path(@project),
               method: :delete, class: "small ui orange button" %>   
