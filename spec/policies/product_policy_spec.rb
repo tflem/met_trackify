@@ -29,27 +29,27 @@ RSpec.describe ProductPolicy do
       user.admin = true
       expect(subject).to include(product)
     end
-  end
+  end  
 
   permissions :show? do
     let(:user) { FactoryBot.create :user }
-    let(:product) { FactoryBot.create :product}
+    let(:product) { FactoryBot.create :product }
 
     it "blocks anonymous users" do
       expect(subject).not_to permit(nil, product)
     end  
 
-    it "allows viewers of the product" do
+    it "allows viewers of the product info" do
       assign_product_role!(user, :viewer, product)
       expect(subject).to permit(user, product)
     end
 
-    it "allows editors of the product" do
+    it "allows editors of the product info" do
       assign_product_role!(user, :editor, product)
       expect(subject).to permit(user, product)
     end
 
-    it "allows managers of the product" do
+    it "allows managers of the product info" do
       assign_product_role!(user, :manager, product)
       expect(subject).to permit(user, product)
     end
@@ -59,4 +59,33 @@ RSpec.describe ProductPolicy do
       expect(subject).to permit(admin, product)
     end
   end  
+
+  permissions :update? do
+    let(:user) { FactoryBot.create :user }
+    let(:product) { FactoryBot.create :product }
+
+    it "blocks anonymous users" do
+      expect(subject).not_to permit(nil, product)
+    end
+    
+    it "does not allow viewers of the product info" do
+      assign_product_role!(user, :viewer, product)
+      expect(subject).not_to permit(user, product)
+    end  
+
+    it "does not allow editors of the product info" do
+      assign_product_role!(user, :editor, product)
+      expect(subject).not_to permit(user, product)
+    end 
+
+    it "allows managers of the product info" do
+      assign_product_role!(user, :manager, product)
+      expect(subject).to permit(user, product)
+    end 
+
+    it "allows administrators" do
+      admin = FactoryBot.create :user, :admin
+      expect(subject).to permit(admin, product)
+    end 
+  end    
 end

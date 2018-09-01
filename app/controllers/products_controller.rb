@@ -10,11 +10,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    authorize @product, :update?
   end
 
   def update
-    @product = Product.find(params[:id])
-
+    authorize @product, :update?
     if @product.update(product_params)
       flash[:notice] = "Product Has Been Updated."
       redirect_to @product 
