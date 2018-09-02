@@ -9,11 +9,12 @@ class ProductPolicy < ApplicationPolicy
   end  
 
   def show?
-    user.try(:admin?) || record.product_roles.exists?(user_id: user)
+    user.try(:admin?) ||
+    record.has_product_member?(user)
   end
 
   def update?
-    user.try(:admin?) || record.product_roles.exists?(user_id: user,
-                                                      role: 'manager')
+    user.try(:admin?) ||
+    record.product_roles.exists?(user_id: user, role: "manager")
   end
 end

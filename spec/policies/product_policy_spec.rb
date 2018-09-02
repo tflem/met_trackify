@@ -31,61 +31,45 @@ RSpec.describe ProductPolicy do
     end
   end  
 
-  permissions :show? do
-    let(:user) { FactoryBot.create :user }
-    let(:product) { FactoryBot.create :product }
+  context "permissions" do
+    subject { ProductPolicy.new(user, product) }
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, product)
-    end  
+    let(:user) { FactoryBot.create(:user) }
+    let(:product) { FactoryBot.create(:product) }
 
-    it "allows viewers of the product info" do
-      assign_product_role!(user, :viewer, product)
-      expect(subject).to permit(user, product)
+    context "for anonymous users" do
+      let(:user) { nil }
+
+      it { should_not permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows editors of the product info" do
-      assign_product_role!(user, :editor, product)
-      expect(subject).to permit(user, product)
+    context "for viewers of the product info" do
+      before { assign_product_role!(user, :viewer, product) }
+
+      it { should permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows managers of the product info" do
-      assign_product_role!(user, :manager, product)
-      expect(subject).to permit(user, product)
+    context "for editors of the product info" do
+      before { assign_product_role!(user, :editor, product) }
+
+      it { should permit_action :show }
+      it { should_not permit_action :update }
     end
-    
-    it "allows administrators" do
-      admin = FactoryBot.create :user, :admin
-      expect(subject).to permit(admin, product)
+
+    context "for managers of the product info" do
+      before { assign_product_role!(user, :manager, product) }
+
+      it { should permit_action :show }
+      it { should permit_action :update }
     end
-  end  
 
-  permissions :update? do
-    let(:user) { FactoryBot.create :user }
-    let(:product) { FactoryBot.create :product }
+    context "for administrators" do
+      let(:user) { FactoryBot.create :user, :admin }
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, product)
+      it { should permit_action :show }
+      it { should permit_action :update }
     end
-    
-    it "does not allow viewers of the product info" do
-      assign_product_role!(user, :viewer, product)
-      expect(subject).not_to permit(user, product)
-    end  
-
-    it "does not allow editors of the product info" do
-      assign_product_role!(user, :editor, product)
-      expect(subject).not_to permit(user, product)
-    end 
-
-    it "allows managers of the product info" do
-      assign_product_role!(user, :manager, product)
-      expect(subject).to permit(user, product)
-    end 
-
-    it "allows administrators" do
-      admin = FactoryBot.create :user, :admin
-      expect(subject).to permit(admin, product)
-    end 
-  end    
+  end 
 end

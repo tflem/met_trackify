@@ -31,61 +31,45 @@ RSpec.describe ProjectPolicy do
     end    
   end  
 
-  permissions :show? do
-    let(:user) { FactoryBot.create :user }
-    let(:project) { FactoryBot.create :project}
+  context "permissions" do
+    subject { ProjectPolicy.new(user, project) }
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, project)
-    end  
+    let(:user) { FactoryBot.create(:user) }
+    let(:project) { FactoryBot.create(:project) }
 
-    it "allows viewers of the project info" do
-      assign_project_role!(user, :viewer, project)
-      expect(subject).to permit(user, project)
+    context "for anonymous users" do
+      let(:user) { nil }
+
+      it { should_not permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows editors of the project info" do
-      assign_project_role!(user, :editor, project)
-      expect(subject).to permit(user, project)
+    context "for viewers of the project info" do
+      before { assign_project_role!(user, :viewer, project) }
+
+      it { should permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows managers of the project info" do
-      assign_project_role!(user, :manager, project)
-      expect(subject).to permit(user, project)
-    end
-    
-    it "allows administrators" do
-      admin = FactoryBot.create :user, :admin
-      expect(subject).to permit(admin, project)
-    end    
-  end  
+    context "for editors of the project info" do
+      before { assign_project_role!(user, :editor, project) }
 
-  permissions :update? do
-    let(:user) { FactoryBot.create :user }
-    let(:project) { FactoryBot.create :project }
+      it { should permit_action :show }
+      it { should_not permit_action :update }
+    end
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, project)
-    end
-    
-    it "does not allow viewers of project info" do
-      assign_project_role!(user, :viewer, project)
-      expect(subject).not_to permit(user, project)
-    end
-    
-    it "does not allow editors of project info" do
-      assign_project_role!(user, :editor, project)
-      expect(subject).not_to permit(user, project)
-    end  
+    context "for managers of the project info" do
+      before { assign_project_role!(user, :manager, project) }
 
-    it "allows managers of the project info" do
-      assign_project_role!(user, :manager, project)
-      expect(subject).to permit(user, project)
+      it { should permit_action :show }
+      it { should permit_action :update }
     end
-    
-    it "allows administrators" do
-      admin = FactoryBot.create :user, :admin
-      expect(subject).to permit(admin, project)
-    end  
-  end
+
+    context "for administrators" do
+      let(:user) { FactoryBot.create :user, :admin }
+
+      it { should permit_action :show }
+      it { should permit_action :update }
+    end
+  end 
 end
