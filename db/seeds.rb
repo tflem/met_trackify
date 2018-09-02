@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 unless User.exists?(email: "admin@mettrackify.com")
-  User.create!(email: "admin@mettracify.com", password: "password", admin:true)
+  User.create!(email: "admin@mettrackify.com", password: "password", admin: true)
 end
 
 unless User.exists?(email: "viewer@mettrackify.com")

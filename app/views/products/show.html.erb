@@ -4,7 +4,7 @@
 
 <% admins_only do %>
   <%= link_to semantic_icon("plus") + "Add New Product", new_admin_product_path,
-      class: "small ui orange button" %>
+      class: "ui orange button" %>
 <% end %>
 <%= link_to semantic_icon("clipboard list") + "Show All Products",
     products_path, class: "ui orange button" %>
@@ -27,7 +27,7 @@
                 class: "small ui orange button" %>
           <% end %>
         <% admins_only do %>
-            <%= link_to semantic_icon("delete") + "Delete",
+            <%= link_to semantic_icon("delete") + "Delete Product",
                 admin_product_path(@product), method: :delete, class: "small ui orange button" %>
         <% end %>
         </td>

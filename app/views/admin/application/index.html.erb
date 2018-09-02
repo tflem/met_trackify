@@ -2,11 +2,13 @@
 
 <div class="hero-container">
   <div class="hero">
-    <h3>Welcome to Met Trackify's Admin Lounge.</h3>  
+    <h3 class="ui black header">Welcome to Met Trackify's Admin Lounge.</h3>  
   </div> 
   <div class="hero">
-    <h3>Admin Links</h3>
-    <%= link_to semantic_icon("user") + "Users", admin_users_path %>
+    <h3 class="ui black header">
+      Admin Links:
+      <%= link_to semantic_icon("user") + "Users", admin_users_path, class: "ui black header" %>
+    </h3>
   </div> 
 </div>
 

@@ -1,7 +1,19 @@
-<h2 class=ui center aligned header>List of Users<h2>
+<h2 class="ui center aligned header">List of Users<h2>
 
-<%= link_to semantic_icon("add user") + "Add New User", new_admin_user_path %>
+<%= link_to semantic_icon("add user") + "Add New User",
+    new_admin_user_path, class: "ui button orange" %>
 
-<% @users.each do |user| %>
-  <%= link_to user, [:admin, user] %>
-<% end %>
+<table class="ui inverted table">
+  <thead>
+    <tr>
+      <th>Met Trackify Users</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user, [:admin, user] %></td> 
+      </tr>  
+    <% end %>     
+  </tbody>
+</table>
