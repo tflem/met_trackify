@@ -28,8 +28,10 @@
             <%= link_to semantic_icon("edit") + "Edit Project", edit_project_path(@project), 
                 class: "small ui orange button" %>
           <% end %>
+          <br />
+          <br />
         <% admins_only do %>
-          <%= link_to semantic_icon("delete") + "Delete", admin_project_path(@project),
+          <%= link_to semantic_icon("delete") + "Delete Project", admin_project_path(@project),
               method: :delete, class: "small ui orange button" %>   
         <% end %>         
         </td>       

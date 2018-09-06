@@ -10,7 +10,7 @@ RSpec.feature "Users can delete projects" do
 
     visit "/projects"
     click_link 17701
-    click_link "Delete"
+    click_link "Delete Project"
 
     expect(page).to have_content "Project Information Has Been Deleted."
     expect(page.current_url).to eq projects_url

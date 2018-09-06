@@ -10,7 +10,7 @@ RSpec.feature "Managers can edit existing product info" do
 
     visit "/"
     click_link "Christmas Tree"
-    click_link "Edit"
+    click_link "Edit Product"
   end
 
   scenario "with valid attributes" do

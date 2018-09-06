@@ -10,7 +10,7 @@ RSpec.feature "Managers can edit existing project info" do
 
     visit "/projects"
     click_link 17701
-    click_link "Edit"
+    click_link "Edit Project"
   end
 
   scenario "with valid attributes" do
