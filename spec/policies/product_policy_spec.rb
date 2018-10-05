@@ -63,7 +63,7 @@ RSpec.describe ProductPolicy do
 
       it { should permit_action :show }
       it { should permit_action :update }
-    end
+    end    
 
     context "for administrators" do
       let(:user) { FactoryBot.create :user, :admin }

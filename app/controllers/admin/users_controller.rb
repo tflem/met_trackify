@@ -1,4 +1,4 @@
-class Admin::UsersController < Admin::ApplicationController
+class Admin::UsersController < Admin::ApplicationController    
   before_action :set_user, only: [:show, :edit, :update, :archive]  
   
   def index
@@ -30,15 +30,15 @@ class Admin::UsersController < Admin::ApplicationController
   def update
     if params[:user][:password].blank?
       params[:user].delete(:password)
-    end
+    end        
 
     if @user.update(user_params)
       flash[:notice] = "User Has Been Updated."
       redirect_to admin_users_path
     else
       flash.now[:alert] = "User Has Not Been Updated."
-      render "edit"
-    end
+      render "edit"     
+    end 
   end
 
   def archive
@@ -61,5 +61,5 @@ class Admin::UsersController < Admin::ApplicationController
 
     def set_user
       @user = User.find(params[:id])
-    end
+    end       
 end

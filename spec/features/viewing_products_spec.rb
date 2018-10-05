@@ -6,7 +6,7 @@ RSpec.feature "Users can view products" do
 
   before do
     login_as(user)
-    assign_product_role!(user, :viewer, product)
+    assign_product_role!(user, :viewer, product) 
   end
 
   scenario "with product details" do

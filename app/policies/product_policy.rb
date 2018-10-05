@@ -3,7 +3,7 @@ class ProductPolicy < ApplicationPolicy
     def resolve
       return scope.none if user.nil?
       return scope.all if user.admin?
-  
+
       scope.joins(:product_roles).where(product_roles: {user_id: user})
     end
   end  
@@ -15,6 +15,6 @@ class ProductPolicy < ApplicationPolicy
 
   def update?
     user.try(:admin?) ||
-    record.product_roles.exists?(user_id: user, role: "manager")
+    record.has_manager?(user)
   end
 end

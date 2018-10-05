@@ -28,5 +28,5 @@ class Admin::ProjectsController < Admin::ApplicationController
       params.require(:project).permit(:project_number,
                                       :project_name,
                                       :project_time)
-  end
+    end
 end

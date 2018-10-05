@@ -1,13 +1,17 @@
 <% if user_signed_in? %>
   <div class="ui sidebar inverted vertical menu">
     <div class="header item">
-      <%= semantic_icon("user") %>Logged In As <%= current_user.email %>  
+      <%= semantic_icon("user") %> <%= current_user.email %>  
     </div>
+
+    <div class="header item">
     <% admins_only do %>
-      <%= link_to semantic_icon("user secret") + "Admin", admin_root_path %>
+      <%= link_to semantic_icon("user secret") + "Admin", admin_root_path,
+          class: "item" %>
     <% end %>
     <%= link_to semantic_icon("sign out") + "Logout", destroy_user_session_path,
         method: :delete, class: "item" %>  
+    </div>
   </div>  
 
   <div class="ui fixed inverted menu">
