@@ -11,6 +11,9 @@ RSpec.feature "Users can view products" do
 
   scenario "with product details" do
     visit "/"
+    click_link "View Article Info"
+
+
     click_link "Christmas Tree"
     expect(page.current_url).to eq product_url(product)
   end

@@ -59,7 +59,7 @@ RSpec.feature "Users can only see the appropriate links" do
 
     scenario "can see the New Product link on index page" do
       visit "/"
-      expect(page).to have_link "Add New Product"
+      expect(page).to have_link "Add Article Info"
     end
 
     scenario "can see the New Product link on show page" do

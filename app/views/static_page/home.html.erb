@@ -1,0 +1,18 @@
+<div class="hero-container">
+  <div class="hero">
+    <h2 class="ui center aligned header">Welcome to Met Trackify:  
+    A Product and Project Time Tracking Application 
+
+    <%= link_to semantic_icon("clipboard list") + "View Article Info",
+        products_path, class: "large ui black button" %> 
+    <%= link_to semantic_icon("list") + "View Project Info",
+        projects_path, class: "large ui black button" %>             
+    
+    <% admins_only do %>
+      <%= link_to semantic_icon("plus") + "Add Article Info",
+          new_admin_product_path, class: "large ui black button" %> 
+      <%= link_to semantic_icon("plus") + "Add Project Time",
+          new_admin_project_path, class: "large ui black button" %>        
+    <% end %></h2>
+  </div>  
+</div>

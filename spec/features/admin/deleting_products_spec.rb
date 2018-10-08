@@ -9,6 +9,8 @@ RSpec.feature "Users can delete products" do
     FactoryBot.create(:product, article_name: "Christmas Tree")
 
     visit "/"
+    click_link "View Article Info"
+
     click_link "Christmas Tree"
     click_link "Delete"
 

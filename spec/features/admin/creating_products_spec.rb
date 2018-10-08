@@ -5,7 +5,7 @@ RSpec.feature "Users can create new products" do
     login_as(FactoryBot.create(:user, :admin))
     visit "/"
 
-    click_link "Add New Product"
+    click_link "Add Article Info"
   end
 
   scenario "with valid attributes" do

@@ -9,6 +9,8 @@ RSpec.feature "Managers can edit existing product info" do
     assign_product_role!(user, :manager, product)
 
     visit "/"
+    click_link "View Article Info"
+
     click_link "Christmas Tree"
     click_link "Edit Product"
   end
