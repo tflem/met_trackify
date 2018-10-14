@@ -3,6 +3,8 @@
 <% admins_only do %>
   <%= link_to semantic_icon("plus") + "Add New Project", 
       new_admin_project_path, class: "ui orange button" %>
+  <%= link_to semantic_icon("clipboard list") + "View Article Info",
+      products_path, class: "ui orange button" %> 
 <% end %>
 
 <table class="ui five column selectable inverted table index">
