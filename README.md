@@ -42,4 +42,4 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 % rails db:migrate
 ```
 
-You can view my progress at http://mettrackify.herokuapp.com.
+You can a staged demo at http://mettrackify.herokuapp.com.
