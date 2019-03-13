@@ -8,7 +8,7 @@
 
 * Ruby 2.5.1
 * Continuous Integration: Travis
-* Ruby on Rails 5.2.0
+* Ruby on Rails 5.2.2.1
 * HTML5 and Sass
 * PostgreSQL 10
 * Testing Framework: RSpec 3.7.1
