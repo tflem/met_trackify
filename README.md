@@ -6,7 +6,7 @@
 
 > This a product tracking application, which features the following tools:
 
-* Ruby 2.5.1
+* Ruby 2.6.5
 * Continuous Integration: Travis
 * Ruby on Rails 5.2.2.1
 * HTML5 and Sass
