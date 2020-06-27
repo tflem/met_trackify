@@ -39,7 +39,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
-  gem 'simplecov', require: false
+  gem 'simplecov', '0.17.1', require: false
   gem 'simplecov-console', require: false
 end
 
