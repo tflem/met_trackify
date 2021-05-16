@@ -16,9 +16,9 @@ services:
 addons:
   apt:
     packages:
-      - postgresql-10
-      - postgresql-client-10
-  postgresql: 10
+      - postgresql-9
+      - postgresql-client-9
+  postgresql: 9
 env:
   global:
     - PGPORT=5433
