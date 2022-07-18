@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/tflem/met_trackify.svg?branch=master)](https://travis-ci.org/tflem/met_trackify)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/maintainability)](https://codeclimate.com/github/tflem/met_trackify/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/test_coverage)](https://codeclimate.com/github/tflem/met_trackify/test_coverage)
 
@@ -6,13 +6,13 @@
 
 > This a product tracking application, which features the following tools:
 
-* Ruby 2.6.5
+* Ruby 3.1.2
 * Continuous Integration: Travis
-* Ruby on Rails 5.2.4.5
+* Ruby on Rails 6.1.6.1
 * HTML5 and Sass
-* PostgreSQL 10
-* Testing Framework: RSpec 3.7.1
-* CSS Framework: Semantic UI
+* PostgreSQL 14
+* Testing Framework: RSpec 5.1.2
+* CSS Framework: Semantic UI 2.4.4.0
 
 ## Setup
 
