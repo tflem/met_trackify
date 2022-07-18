@@ -9,7 +9,7 @@ RSpec.feature "Admins can create new users" do
 
     within all("div.ui.menu")[0] do
       click_link "Admin"
-    end    
+    end
 
     click_link "Users"
     click_link "Add New User"
@@ -26,8 +26,8 @@ RSpec.feature "Admins can create new users" do
     fill_in "Email", with: ""
     fill_in "Password",	with: "password"
     click_button "Create User"
-    
-    expect(page).to have_content "User Has Not Been Created." 
+
+    expect(page).to have_content "User Has Not Been Created."
   end
 
   scenario "when the new user is an admin" do
@@ -36,6 +36,6 @@ RSpec.feature "Admins can create new users" do
     check "Is an admin?"
     click_button "Create User"
     expect(page).to have_content "User Has Been Created."
-    expect(page).to have_content "admin@example.com (Admin)"  
+    expect(page).to have_content "admin@example.com (Admin)"
   end
-end  
+end

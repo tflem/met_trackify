@@ -1,10 +1,9 @@
 require "rails_helper"
 
 RSpec.describe ProjectPolicy do
-
   let(:user) { User.new }
 
-  subject { described_class }  
+  subject { described_class }
 
   context "policy_scope" do
     subject { Pundit.policy_scope(user, Project) }
@@ -28,8 +27,8 @@ RSpec.describe ProjectPolicy do
     it "returns all projects for admins" do
       user.admin = true
       expect(subject).to include(project)
-    end    
-  end  
+    end
+  end
 
   context "permissions" do
     subject { ProjectPolicy.new(user, project) }
@@ -71,5 +70,5 @@ RSpec.describe ProjectPolicy do
       it { should permit_action :show }
       it { should permit_action :update }
     end
-  end 
+  end
 end

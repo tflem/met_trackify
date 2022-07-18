@@ -1,10 +1,9 @@
 require "rails_helper"
 
 RSpec.describe ProductPolicy do
-
   let(:user) { User.new }
 
-  subject { described_class }  
+  subject { described_class }
 
   context "policy_scope" do
     subject { Pundit.policy_scope(user, Product) }
@@ -29,7 +28,7 @@ RSpec.describe ProductPolicy do
       user.admin = true
       expect(subject).to include(product)
     end
-  end  
+  end
 
   context "permissions" do
     subject { ProductPolicy.new(user, product) }
@@ -63,7 +62,7 @@ RSpec.describe ProductPolicy do
 
       it { should permit_action :show }
       it { should permit_action :update }
-    end    
+    end
 
     context "for administrators" do
       let(:user) { FactoryBot.create :user, :admin }
@@ -71,5 +70,5 @@ RSpec.describe ProductPolicy do
       it { should permit_action :show }
       it { should permit_action :update }
     end
-  end 
+  end
 end

@@ -8,6 +8,6 @@ RSpec.feature "Users can create account" do
     fill_in "user_password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_button "Create Account"
-    expect(page). to have_content("Welcome! Your Account Has Been Created.")
+    expect(page).to have_content("Welcome! Your Account Has Been Created.")
   end
 end

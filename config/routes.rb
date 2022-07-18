@@ -1,7 +1,7 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
   root "static_page#home"
   devise_for :users
-  
+
   namespace :admin do
     root "application#index"
 

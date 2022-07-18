@@ -6,12 +6,12 @@ RSpec.feature "Users can view projects" do
 
   before do
     login_as(user)
-    assign_project_role!(user, :viewer, project)    
+    assign_project_role!(user, :viewer, project)
   end
 
   scenario "with project details" do
     visit "/projects"
-    click_link 17701
+    click_link "17701"
     expect(page.current_url).to eq project_url(project)
   end
 
@@ -19,5 +19,5 @@ RSpec.feature "Users can view projects" do
     FactoryBot.create(:project, project_number: 17701)
     visit "/projects"
     expect(page).to have_content 17701
-  end  
+  end
 end

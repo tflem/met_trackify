@@ -3,15 +3,15 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = policy_scope(Project)
-  end    
+  end
 
   def show
     authorize @project, :show?
-  end  
+  end
 
   def edit
     authorize @project, :update?
-  end    
+  end
 
   def update
     authorize @project, :update?
@@ -22,20 +22,20 @@ class ProjectsController < ApplicationController
       flash.now[:alert] = "Project Information Has Not Been Updated."
       render "edit"
     end
-  end 
+  end
 
   private
-    def project_params
-      params.require(:project).permit(:project_number,
-                                      :project_name,
-                                      :project_time)
-    end
 
-    def set_project
-      @project = Project.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:alert] = "The Project You Were Looking for Could Not Be Found."
-      redirect_to projects_path
-    end
+  def project_params
+    params.require(:project).permit(:project_number,
+      :project_name,
+      :project_time)
+  end
+
+  def set_project
+    @project = Project.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The Project You Were Looking for Could Not Be Found."
+    redirect_to projects_path
+  end
 end
-    

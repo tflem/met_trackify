@@ -6,15 +6,15 @@ class ProductPolicy < ApplicationPolicy
 
       scope.joins(:product_roles).where(product_roles: {user_id: user})
     end
-  end  
+  end
 
   def show?
     user.try(:admin?) ||
-    record.has_product_member?(user)
+      record.has_product_member?(user)
   end
 
   def update?
     user.try(:admin?) ||
-    record.has_manager?(user)
+      record.has_manager?(user)
   end
 end

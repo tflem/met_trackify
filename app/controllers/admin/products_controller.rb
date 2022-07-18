@@ -24,10 +24,11 @@ class Admin::ProductsController < Admin::ApplicationController
   end
 
   private
-    def product_params
-      params.require(:product).permit(:article_number,
-                                      :article_name,
-                                      :date_received,
-                                      :article_location)
-    end  
+
+  def product_params
+    params.require(:product).permit(:article_number,
+      :article_name,
+      :date_received,
+      :article_location)
+  end
 end

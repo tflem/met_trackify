@@ -4,7 +4,7 @@ RSpec.feature "Users can only see the appropriate links" do
   let(:product) { FactoryBot.create(:product) }
   let(:project) { FactoryBot.create(:project) }
   let(:user) { FactoryBot.create(:user) }
-  let(:admin) { FactoryBot.create(:user, :admin) }  
+  let(:admin) { FactoryBot.create(:user, :admin) }
 
   context "non-admin users (product and project viewers)" do
     before do
@@ -31,7 +31,7 @@ RSpec.feature "Users can only see the appropriate links" do
     scenario "cannot see the New Project link on index page" do
       visit "/projects"
       expect(page).not_to have_link "Add New Project"
-    end  
+    end
 
     scenario "cannot see the New Project link on show page" do
       visit project_path(project)
@@ -46,7 +46,7 @@ RSpec.feature "Users can only see the appropriate links" do
     scenario "cannot see the Edit Product link" do
       visit product_path(product)
       expect(page).not_to have_link "Edit Product"
-    end 
+    end
 
     scenario "cannot see the Edit Project link" do
       visit project_path(project)
@@ -75,12 +75,12 @@ RSpec.feature "Users can only see the appropriate links" do
     scenario "can see the New Project link on index page" do
       visit "/projects"
       expect(page).to have_link "Add New Project"
-    end  
+    end
 
     scenario "can see the New Project link on show page" do
       visit project_path(project)
       expect(page).to have_link "Add New Project"
-    end  
+    end
 
     scenario "can see the Delete Project link" do
       visit project_path(project)
@@ -89,7 +89,7 @@ RSpec.feature "Users can only see the appropriate links" do
 
     scenario "can see the Edit Product link" do
       visit product_path(product)
-      expect(page).to have_link "Edit Product"  
+      expect(page).to have_link "Edit Product"
     end
 
     scenario "can see the Edit Project link" do

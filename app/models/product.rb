@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
-  validates :article_number, :article_name, 
-            :article_location, presence: true 
-  has_many  :product_roles, dependent: :delete_all
+  validates :article_number, :article_name,
+    :article_location, presence: true
+  has_many :product_roles, dependent: :delete_all
 
   def has_member?(user)
     product_roles.exists?(user_id: user)

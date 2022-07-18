@@ -1,6 +1,6 @@
 module NotAuthorizedConcern
   extend ActiveSupport::Concern
-  
+
   private
 
   def not_authorized

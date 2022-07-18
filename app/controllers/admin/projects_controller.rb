@@ -13,7 +13,7 @@ class Admin::ProjectsController < Admin::ApplicationController
       flash.now[:alert] = "Project Information Has Not Been Created."
       render "new"
     end
-  end  
+  end
 
   def destroy
     @project = Project.find(params[:id])
@@ -24,9 +24,10 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   private
-    def project_params
-      params.require(:project).permit(:project_number,
-                                      :project_name,
-                                      :project_time)
-    end
+
+  def project_params
+    params.require(:project).permit(:project_number,
+      :project_name,
+      :project_time)
+  end
 end

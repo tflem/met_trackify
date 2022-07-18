@@ -10,11 +10,11 @@ class ProjectPolicy < ApplicationPolicy
 
   def show?
     user.try(:admin?) ||
-    record.has_project_member?(user)
+      record.has_project_member?(user)
   end
 
   def update?
     user.try(:admin?) ||
-    record.has_manager?(user)
-  end  
+      record.has_manager?(user)
+  end
 end
