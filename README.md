@@ -5,16 +5,16 @@
 
 # Met Trackify
 
-> This a product tracking application, which features the following tools:
+> This a product-tracking application, which features the following tools:
 
+* Continuous Deployment: Heroku
 * Ruby on Rails 6.1.6.1
 * Ruby 3.1.2
-* Continuous Integration: Github Actions
-* Continuous Deployment: Heroku
 * HTML5 and Sass
 * PostgreSQL (Tested for 14.x)
 * Testing Framework: RSpec 5.1.2
 * CSS Framework: Semantic UI 2.4.4.0
+* Continuous Integration: Github Actions
 
 ## Setup
 
