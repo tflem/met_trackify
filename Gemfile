@@ -20,6 +20,8 @@ gem "simple_form", "~> 5.0", ">= 5.0.1"
 gem "devise", ">= 4.6.0"
 gem "pundit", "~> 1.1"
 gem "net-smtp", "~> 0.3.1"
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 gem "bootsnap", ">= 1.1.0", require: false
 gem "standard", group: [:development, :test]
 
