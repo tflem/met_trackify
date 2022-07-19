@@ -1,3 +1,4 @@
+![CCB Tracker workflow](https://github.com/tflem/met_metrackify/actions/workflows/mettrackify.yml/badge.svg)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/maintainability)](https://codeclimate.com/github/tflem/met_trackify/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ed991bc332c2bac4e713/test_coverage)](https://codeclimate.com/github/tflem/met_trackify/test_coverage)
