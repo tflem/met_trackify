@@ -41,7 +41,6 @@ group :test do
   gem "selenium-webdriver"
   gem "factory_bot_rails"
   gem "webdrivers", "~> 5.0", require: false
-  gem "database_cleaner"
   gem "simplecov", "0.17.1", require: false
   gem "simplecov-console", require: false
 end
