@@ -8,7 +8,7 @@
 > This a product-tracking application, which features the following tools:
 
 * Continuous Deployment: Heroku
-* Ruby on Rails 6.1.6.1
+* Ruby on Rails 6.1.7
 * Ruby 3.1.2
 * HTML5 and Sass
 * PostgreSQL (Tested for 14.x)
